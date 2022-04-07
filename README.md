@@ -1,7 +1,9 @@
 Logging library for vim
 =======================
 
-This is an unmodfied clone of [log.vim](https://www.vim.org/scripts/script.php?script_id=2330) by [Yukihiro Nakadaira](https://github.com/ynkdir/).
+This is a slightly modfied clone of
+[log.vim](https://www.vim.org/scripts/script.php?script_id=2330) by
+[Yukihiro Nakadaira](https://github.com/ynkdir/).
 
 Installation
 ------------
