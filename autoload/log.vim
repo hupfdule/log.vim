@@ -118,7 +118,11 @@ function s:lib.init(level, targets, ...)
   let format = get(a:000, 0, '')
   let tmp.filter = get(a:000, 1, '')
   if empty(format)
-    let format = '[{level}][{strftime("%Y-%m-%d %H:%M:%S")}][{name}] {msg}'
+    if exists('g:log_format')
+      let format = g:log_format
+    else
+      let format = '[{level}][{strftime("%Y-%m-%d %H:%M:%S")}][{name}] {msg}'
+    endif
   endif
   if empty(tmp.filter)
     let tmp.filter = ''

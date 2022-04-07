@@ -40,6 +40,20 @@ function s:func()
 endfunction
 ```
 
+Options
+-------
+
+There is only one option for the default format string:
+```vim
+" optionally set a default format string
+let g:log_format = "{strftime(\"%Y-%m-%d %H:%M:%S\")} {plevel} [{name}] {msg}"
+```
+
+This overrides the default hardcoded format string.
+
+This option may still be overriden with a different format string when
+calling the `log#init()` method.
+
 Reference
 ---------
 
