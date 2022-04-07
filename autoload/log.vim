@@ -58,6 +58,7 @@
 "     Log format.  {expr} is replaced by eval(expr).  For example, {getpid()}
 "     is useful to detect session.  Following special variables are available.
 "     {level}   log level like DEBUG, INFO, etc...
+"     {plevel}  like {level} but right padded with spaces to be always 5 characters long
 "     {name}    log name specified by log#getLogger(name)
 "     {msg}     log message
 "     If this is 0, '', [] or {} (empty(format) is true), default is used.
@@ -182,6 +183,7 @@ endfunction
 
 function s:lib.Logger.log(level, args)
   let level = a:level
+  let plevel = a:level . repeat(' ', 5 - len(a:level))
   let name = self.name
   let msg = (len(a:args) == 1) ? a:args[0] : call('printf', a:args)
   " sub-replace-\= does not work recursively.
